@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-
+import 'login_page.dart';
 void main() {
   runApp(MaterialApp(
     home: SplashScreen(),
@@ -269,8 +269,9 @@ class EnjoyPage extends StatelessWidget {
                   ElevatedButton(
                     // onPressed: navigateToEnjoyPage
                     onPressed: () {
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => EnjoyPage()),
+                      Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
                       );
                     },
                     // onPressed: () => Navigator.push(context, CupertinoPageRoute(builder: (context) => const SecondRoute()),,
