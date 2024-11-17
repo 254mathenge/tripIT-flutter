@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'forgot_password.dart';
+import 'package:myapp/login_page.dart';
+import 'verification.dart';
 
-class LoginPage extends StatelessWidget {
+class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,45 +47,26 @@ class LoginPage extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       // Title inside the card
-                      const Text(
-                        "Sign In",
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      //sign in button
+                      //
+                      Text(
+                        'Forgot Password',
+                        style: TextStyle(color: Colors.black, fontSize: 18.0),
                       ),
-                      // Email Input Field
                       const TextField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          labelText: 'Email',
+                          labelText: 'Enter Email Address',
+
+                        
                           // border: OutlineInputBorder(
                           //   borderRadius: BorderRadius.circular(8.0),
                           // ),
                           // prefixIcon: Icon(Icons.email, color: Colors.pink),
                         ),
+              
                       ),
-
-                      // Password TextField (Optional)
-                      const TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          // border: OutlineInputBorder(),
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ForgotPassword()),
-                          );
-                        },
-                        child: const Text('Forgot Password?'),
-                      ),
-                      //sign in button
-                      // Inside your widget's build method
+                      SizedBox(height:5.0),
                       Container(
                         width: 300.0, // Set desired width
                         height: 50.0,
@@ -98,14 +80,14 @@ class LoginPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ForgotPassword()),
+                                  builder: (context) => verification()),
                             );
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Sign in',
+                                'Forgot',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18.0),
                               ),
@@ -133,85 +115,37 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      // Facebook blue color
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      onPressed: () {
-                        // Add Facebook login functionality here
-                      },
-                      icon: Icon(
-                        Icons.facebook, // Facebook icon
-                        color: Colors.white,
-                        size: 60.0,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // width: 50.0,
-                    // height: 50.0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border:Border.all(
-                        color:Colors.white,
-                        width: 2.0,
-                      ),
-                    ),
-                    child: IconButton(
-                        onPressed: () {
-                          // Add Facebook login functionality here
-                        },
-                        icon: Text('G', // Representing Google with 'G'
-                            style: TextStyle(
-                              fontSize: 30.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold, // Google's red color
-                             
-                            ))),
-                  ),
-                ],
-              ),
+
               Spacer(),
-              SizedBox(height:5.0),
+              SizedBox(height: 5.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Dont have an account?",
+                    "Having Trouble?",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
-                     ),
-
+                    ),
                   ),
-                                TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()),
-                          );
-                        },
-                        child: const Text('Sign Up',
-                        style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                     ),),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
+                    child: const Text(
+                      'Get Help',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
                       ),
+                    ),
+                  ),
                 ],
-                ),
-
-              
-
+              ),
             ]),
-
           ),
         ));
   }
